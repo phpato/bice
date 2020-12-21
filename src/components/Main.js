@@ -11,7 +11,7 @@ class Main extends React.Component {
     }
 
     async getServices(){
-      const servicesResponse = await axios.get('http://localhost:3000/bice_lab/services');
+      const servicesResponse = await axios.get('https://bice-lab.herokuapp.com/bice_lab/services');
       const { data } = await servicesResponse;
       this.setState({services: data.services});
     }

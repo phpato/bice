@@ -17,7 +17,7 @@ class Value extends React.Component {
         this.setState({loading: true});
         this.setState({valueKey: key});
         const valueResponse = await axios.get(
-            `http://localhost:3000/bice_lab/value/${key}`
+            `https://bice-lab.herokuapp.com/bice_lab/value/${key}`
         );
         const {data} = await valueResponse;
         this.setState({loading: false});

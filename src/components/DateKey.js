@@ -15,12 +15,10 @@ class DateKey extends React.Component {
     }
 
     setDate(date) {
-        console.log("la date es: ", date);
         this.setState({date})
     }
 
     setKey(key) {
-        console.log("la key es: ", key);
         this.setState({key})
     }
 
@@ -29,20 +27,17 @@ class DateKey extends React.Component {
         const date = this.state.date;
         const key = this.state.key;
         if (this.state.date=="") {
-            console.log("sdebe ingresar una fecha")
             this.setState({errors: ["sdebe ingresar una fecha."]});
             return;
         }
         if (this.state.key=="") {
-            console.log("sdebe ingresar una key")
             this.setState({errors: ["sdebe ingresar un indicador."]});
             return;
         }
         this.setState({errors: []});
         axios
-            .get(`http://localhost:3000/bice_lab/date/${key}/${date}`)
+            .get(`https://bice-lab.herokuapp.com/bice_lab/date/${key}/${date}`)
             .then(res => {
-                console.log("el servidor respondio: ", res);
                 this.setState({dateKey: res.data})
             })
     }
@@ -61,7 +56,7 @@ class DateKey extends React.Component {
             "yen"
         ];
         const infoDateKey = this.state.dateKey;
-        console.log("EL INFO DATEKEY ES: ", infoDateKey);
+
         return (
             <div className="container">
                 <div className="row" >

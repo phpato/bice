@@ -11,7 +11,7 @@ class Last extends React.Component {
     }
 
     async getLast() {
-        const lastResponse = await axios.get('http://localhost:3000/bice_lab/last');
+        const lastResponse = await axios.get('https://bice-lab.herokuapp.com/bice_lab/last');
         const {data} = await lastResponse;
         this.setState({last: data.last.data});
     }
